@@ -36,7 +36,7 @@ using namespace DlangEditor::Utils;
 using namespace DlangEditor;
 
 using namespace Core;
-using MimeDatabase = ::Utils::MimeDatabase;
+//using MimeDatabase = ::Utils::MimeDatabase;
 
 DlangEditorPlugin::DlangEditorPlugin()
 {
@@ -53,7 +53,7 @@ bool DlangEditorPlugin::initialize(const QStringList &arguments, QString *errorS
 {
     Q_UNUSED(arguments)
 
-    MimeDatabase::addMimeTypes(QLatin1String(":/dlangeditor/DlangEditor.mimetypes.xml"));
+    //MimeDatabase::addMimeTypes(QLatin1String(":/dlangeditor/DlangEditor.mimetypes.xml"));
 
     if (!configureDcdCodeModel(errorString)) {
         return false;
@@ -125,9 +125,12 @@ void DlangEditorPlugin::onPluginImportPathsUpdate(ProjectExplorer::Project *proj
     if (project) {
         CppTools::ProjectInfo pinfo = modelmanager->projectInfo(project);
         if (pinfo.isValid()) {
-            foreach (const CppTools::ProjectPartHeaderPath &header, pinfo.headerPaths()) {
-                if (header.isValid()) {
-                    list.push_back(header.path);
+            auto parts = pinfo.projectParts();
+            foreach (auto part, parts){
+                foreach (const CppTools::ProjectPartHeaderPath &header, part->headerPaths) {
+                    if (header.isValid()) {
+                        list.push_back(header.path);
+                    }
                 }
             }
         }
@@ -163,10 +166,12 @@ bool DlangEditorPlugin::configureDcdCodeModel(QString *errorString)
                 if (currentProject) {
                     CppTools::ProjectInfo pinfo = modelmanager->projectInfo(currentProject);
                     if (pinfo.isValid()) {
-                        foreach (const CppTools::ProjectPartHeaderPath &header,
-                                 pinfo.headerPaths()) {
-                            if (header.isValid()) {
-                                list.push_back(header.path);
+                        auto parts = pinfo.projectParts();
+                        foreach (auto part, parts){
+                            foreach (const CppTools::ProjectPartHeaderPath &header, part->headerPaths) {
+                                if (header.isValid()) {
+                                    list.push_back(header.path);
+                                }
                             }
                         }
                     }

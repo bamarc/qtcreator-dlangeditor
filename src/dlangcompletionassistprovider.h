@@ -16,7 +16,7 @@ public:
     };
 
     // pure TextEditor::CompletionAssistProvider
-    virtual bool supportsEditor(Core::Id editorId) const Q_DECL_OVERRIDE;
+    virtual bool supportsEditor(Core::Id editorId);
     /**
      * Actually, it is called everytime when completion is needed
      */

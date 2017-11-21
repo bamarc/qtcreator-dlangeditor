@@ -26,7 +26,7 @@ DlangLocatorCurrentDocumentFilter::DlangLocatorCurrentDocumentFilter()
 
 DlangLocatorCurrentDocumentFilter::~DlangLocatorCurrentDocumentFilter()
 {
-
+    Q_UNUSED(future)
 }
 
 QList<Core::LocatorFilterEntry> DlangLocatorCurrentDocumentFilter::matchesFor(QFutureInterface<Core::LocatorFilterEntry> &future, const QString &origEntry)

@@ -36,7 +36,7 @@
 using namespace DlangEditor;
 
 using namespace Core;
-using MimeDatabase = ::Utils::MimeDatabase;
+//using MimeDatabase = ::Utils::MimeDatabase;
 
 inline bool isFullIdentifierChar(const QChar& c)
 {
@@ -225,7 +225,7 @@ DlangEditorFactory::DlangEditorFactory()
 
     addHoverHandler(new DlangHoverHandler);
 
-    setCommentStyle(::Utils::CommentDefinition::CppStyle);
+    //setCommentStyle(::Utils::CommentDefinition::CppStyle);
 
     setParenthesesMatchingEnabled(true);
     setMarksVisible(true);
@@ -235,7 +235,8 @@ DlangEditorFactory::DlangEditorFactory()
             TextEditor::TextEditorActionHandler::UnCommentSelection
             | TextEditor::TextEditorActionHandler::Format
             | TextEditor::TextEditorActionHandler::FollowSymbolUnderCursor);
-
+    //explicit TextEditorActionHandler(QObject *parent, Core::Id editorId, Core::Id contextId,
+    //                                 uint optionalActions = None);
     Core::ActionContainer *contextMenu =
             Core::ActionManager::createMenu(DlangEditor::Constants::DLANG_EDITOR_CONTEXT_MENU);
     Core::Command *cmd;

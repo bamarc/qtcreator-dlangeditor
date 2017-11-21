@@ -22,7 +22,8 @@ public:
     virtual QList<Core::LocatorFilterEntry> matchesFor(QFutureInterface<Core::LocatorFilterEntry> &future, const QString &entry);
     virtual void accept(Core::LocatorFilterEntry selection) const;
     virtual void refresh(QFutureInterface<void> &future);
-private:
+    virtual void accept(Core::LocatorFilterEntry selection,
+                        QString *newText, int *selectionStart, int *selectionLength) const;
 };
 
 } // namespace DlangEditor

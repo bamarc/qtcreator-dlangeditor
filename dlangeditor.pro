@@ -63,14 +63,16 @@ INCLUDEPATH += src \
 
 # Qt Creator linking
 
+
+
 ## set the QTC_SOURCE environment variable to override the setting here
-QTCREATOR_SOURCES = $$QTC_SOURCE
+QTCREATOR_SOURCES = "./qtcreator-src/qt-creator/"
 isEmpty(QTCREATOR_SOURCES):QTCREATOR_SOURCES=/usr/src/qtcreator
 !exists($$QTCREATOR_SOURCES):\
     error("Set variable QTC_SOURCE to the QtCreator's sources path (current path is \"$$QTC_SOURCE\")")
 
 ## set the QTC_BUILD environment variable to override the setting here
-IDE_BUILD_TREE = $$QTC_BUILD
+IDE_BUILD_TREE = "/home/mbalda-o/Qt/Tools/QtCreator/lib/qtcreator/"
 isEmpty(IDE_BUILD_TREE):IDE_BUILD_TREE=/usr/lib/qtcreator
 !exists($$IDE_BUILD_TREE): \
     error("Set variable QTC_BUILD to the QtCreator's libraries path (current path is \"$$QTC_BUILD\")")
