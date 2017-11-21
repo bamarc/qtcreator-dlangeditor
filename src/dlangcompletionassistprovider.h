@@ -16,7 +16,7 @@ public:
     };
 
     // pure TextEditor::CompletionAssistProvider
-    virtual bool supportsEditor(Core::Id editorId);
+    virtual bool supportsEditor(Core::Id editorId) const;
     /**
      * Actually, it is called everytime when completion is needed
      */

@@ -9,7 +9,7 @@
 #include <QMutexLocker>
 #include <QTimer>
 
-#include <msgpack.hpp>
+#include <./thirdparty/msgpack.hpp>
 
 using namespace Dasted;
 

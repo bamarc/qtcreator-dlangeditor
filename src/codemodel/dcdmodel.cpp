@@ -13,7 +13,7 @@
 #include <QMutexLocker>
 #include <QTimer>
 
-#include <msgpack.hpp>
+#include <./thirdparty/msgpack.hpp>
 
 #define NIY throw std::runtime_error("not implemented yet")
 

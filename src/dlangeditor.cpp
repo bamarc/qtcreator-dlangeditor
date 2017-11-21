@@ -231,12 +231,11 @@ DlangEditorFactory::DlangEditorFactory()
     setMarksVisible(true);
     setCodeFoldingSupported(true);
 
-    new TextEditor::TextEditorActionHandler(this, DlangEditor::Constants::DLANG_EDITOR_CONTEXT_ID,
+    /*new TextEditor::TextEditorActionHandler(this, DlangEditor::Constants::DLANG_EDITOR_CONTEXT_ID,
             TextEditor::TextEditorActionHandler::UnCommentSelection
             | TextEditor::TextEditorActionHandler::Format
             | TextEditor::TextEditorActionHandler::FollowSymbolUnderCursor);
-    //explicit TextEditorActionHandler(QObject *parent, Core::Id editorId, Core::Id contextId,
-    //                                 uint optionalActions = None);
+    */
     Core::ActionContainer *contextMenu =
             Core::ActionManager::createMenu(DlangEditor::Constants::DLANG_EDITOR_CONTEXT_MENU);
     Core::Command *cmd;

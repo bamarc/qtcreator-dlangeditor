@@ -5,8 +5,7 @@
 #include <string>
 #include <limits>
 
-#include <msgpack.hpp>
-
+#include <./thirdparty/msgpack.hpp>
 namespace Dasted {
 
 const quint8 PROTOCOL_VERSION = 5;

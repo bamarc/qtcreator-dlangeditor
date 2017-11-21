@@ -93,14 +93,18 @@ static inline QString imageString(const QString &img)
 
 void DlangOptionsPageWidget::needRestart()
 {
-    m_warningMessage->setText(imageString(Core::Icons::WARNING.imageFileName()) +
-                              QLatin1String("Some options need to restart QtCreator"));
+    // TODO
+    //m_warningMessage->setText(imageString(Core::Icons::WARNING.imageFileName()) +
+    //                          QLatin1String("Some options need to restart QtCreator"));
+    m_warningMessage->setText(imageString(QLatin1String("Some options need to restart QtCreator")));
     m_warningMessage->setVisible(true);
 }
 
 void DlangOptionsPageWidget::configuartionError(const QString &err)
 {
-    m_warningMessage->setText(imageString(Core::Icons::ERROR.imageFileName()) + err);
+    // TODO
+    //m_warningMessage->setText(imageString(Core::Icons::ERROR.imageFileName()) + err);
+    m_warningMessage->setText(imageString(err));
     m_warningMessage->setVisible(!err.isEmpty());
 }
 
@@ -165,7 +169,8 @@ DlangOptionsPage::DlangOptionsPage()
     setDisplayName(Constants::DLANG_CODE_MODEL_SETTINGS_NAME);
     setCategory(Constants::DLANG_SETTINGS_CATEGORY_ID);
     setDisplayCategory(Constants::DLANG_SETTINGS_CATEGORY_NAME);
-    setCategoryIcon(QLatin1String(Constants::DLANG_SETTINGS_CATEGORY_ICON));
+    //TODO
+    //setCategoryIcon(QLatin1String(Constants::DLANG_SETTINGS_CATEGORY_ICON));
 }
 
 DlangOptionsPage::~DlangOptionsPage()

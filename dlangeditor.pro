@@ -56,7 +56,9 @@ HEADERS += src/dlangeditorplugin.h \
     src/locator/dlanglocatorcurrentdocumentfilter.h \
     src/locator/dlanglocator.h \
     src/dlangeditorutils.h \
-    src/codemodel/dummymodel.h
+    src/codemodel/dummymodel.h \
+    thirdparty/msgpack.h \
+    thirdparty/msgpack.hpp
 
 INCLUDEPATH += src \
     thirdparty/msgpack/include/
