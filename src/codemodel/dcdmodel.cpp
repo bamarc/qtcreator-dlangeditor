@@ -680,7 +680,7 @@ void Internal::ClientPrivate::recv(AutocompleteResponse &rep, int timeout)
 {
     CHECK_THROW(m_tcp.waitForDisconnected(timeout), std::runtime_error("server operation timeout"));
     QByteArray arr = m_tcp.readAll();
-    msgpack::unpack(&m_unp, arr.data(), arr.size());
+    //msgpack::unpack(&m_unp, arr.data(), arr.size());
     msgpack::object obj = m_unp.get();
     rep = obj.as<AutocompleteResponse>();
     m_unp.zone()->clear();

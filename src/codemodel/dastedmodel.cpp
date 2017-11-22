@@ -115,7 +115,7 @@ public:
         ENFORCE(type == T, "message type mismatched");
         const char *pkg = arr.data() + sizeof(s) + sizeof(v) + sizeof(type);
         const size_t pkgLength = s - sizeof(v) - sizeof(type);
-        msgpack::unpack(&m_unp, pkg, pkgLength);
+        //msgpack::unpack(&m_unp, pkg, pkgLength);
         msgpack::object obj = m_unp.get();
         rep = obj.as<Reply<T> >();
         m_unp.zone()->clear();

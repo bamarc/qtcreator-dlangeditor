@@ -26,12 +26,15 @@ DlangLocatorCurrentDocumentFilter::DlangLocatorCurrentDocumentFilter()
 
 DlangLocatorCurrentDocumentFilter::~DlangLocatorCurrentDocumentFilter()
 {
-    Q_UNUSED(future)
+    //Q_UNUSED(future)
 }
 
 QList<Core::LocatorFilterEntry> DlangLocatorCurrentDocumentFilter::matchesFor(QFutureInterface<Core::LocatorFilterEntry> &future, const QString &origEntry)
 {
-    QString entry = trimWildcards(origEntry);
+    //TODO: trimWildcards method
+    //QString entry = trimWildcards(origEntry);
+
+    QString entry = origEntry;
     QList<Core::LocatorFilterEntry> goodEntries;
     QList<Core::LocatorFilterEntry> betterEntries;
     QStringMatcher matcher(entry, Qt::CaseInsensitive);
